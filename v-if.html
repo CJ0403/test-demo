@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title>v-if,v-show,v-for指令</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id = "root">
+        <!--<div v-if="show">hello world</div>-->
+        <div v-show="show">hello world</div>
+        <button @click="handleClick">toggle</button>
+        <ul>
+<!--            <li v-for="item of list" :key="item">{{item}}</li>-->
+            <li v-for="(item,index) of list" :key="index">{{item}}</li>
+        </ul>
+    </div>
+ <!--
+ v-if: 将标签直接移除
+ v-show:为false时，div标签被隐藏，但是没有被清除
+ v-for: 循环展示,key值不能相同
+ -->
+    <script type="">
+        new Vue({
+            el: "#root",
+            data: {
+                show: false,
+                list: [1,2,3]
+            },
+            methods: {
+                handleClick: function (){
+                    this.show = !this.show;
+                }
+            }
+        })
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title>Vue入门</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <h1 v-on:click="handleClick">{{msg}}</h1>
+        <!--双花括号表示插值表达法-->
+        <h1 v-text="number" @click="handleClick1"></h1>
+    </div>
+    <script >
+    //创建vue实例，让vue接管页面上的id=root的元素
+    <!-- 挂载点，模板，实例-->
+    //挂载点：离vue最近的div
+    //模板：挂载点里面的东西
+    //实例：vue
+    new Vue({
+        el:"#root",
+        //template:' <h1>{{msg}}}</h1>',    //实例里面的template里面
+        data:{
+            msg:"您好",
+            number:123
+        },
+        methods:{
+            handleClick:function (){
+              this.msg ="dfg "
+            },
+            handleClick1:function (){
+                this.number="您的法国"
+            }
+        }
+    })
+    </script>
+</body>
+</html>

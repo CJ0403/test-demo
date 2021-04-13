@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title>属性绑定和双向数据绑定</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id = "root">
+        <!--属性绑定
+        v-blind:可以简写成：，属性绑定
+        v-model:实现数据双向绑定-->
+        <div v-bind:title="title" >hello world</div>
+        <input v-model="content"/>
+        <div>{{content}}</div>
+    </div>
+    <script >
+        new Vue({
+            el: "#root",
+            data:{
+                title:"this is hello world",
+                content:"this is content"
+            }
+        })
+
+    </script>
+</body>
+</html>
